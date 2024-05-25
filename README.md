@@ -4,6 +4,10 @@ When a migration is run in a CI/CD pipeline which adds a value to an enum and pe
 
 This has caused a few outages in my application, where we use [Casl](https://casl.js.org/v4/en/guide/intro)'s `Subject` enum for permissions, and we often add user permissions/policies as part of a data migration when adding a new Subject, which causes downtime everytime as users permissions are retrieved from DB for each requests.
 
+# To reproduce
+
+This repository simulates a running backend server and a C/CD pipeline which applies a prisma migration to add an enum value as well as doing a data migration to insert a record with this enum value.
+
 To reproduce:
 
 1. Make sure you have `docker`, `node` and `make` installed
